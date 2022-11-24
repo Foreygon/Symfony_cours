@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Page de profile
+{% endblock %}
+
+{% block body %}
+    <a href="{{ path('user_index') }}">Acceuil</a>
+
+    {% if user.id %}
+        {{user.id}}
+    {% endif %}
+
+{% endblock %}

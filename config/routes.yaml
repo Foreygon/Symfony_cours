@@ -1,3 +1,11 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+    # defaults:
+    #     schemes: [https]
+
+# test:
+    # path: /app_test
+    # controller: Symfony\Bumdle\FrameworkBundle\Controller\RedirectController
+    # defaults:
+    #     route: 'app_test'

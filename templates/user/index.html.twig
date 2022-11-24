@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Page de index
+{% endblock %}
+
+{% block body %}
+    {# <a href="{{ path('user_index') }}">Acceuil</a> #}
+
+    {% for user in users %}
+        <h2>
+            <a href="{{ path('user_profile', {id: user.id}) }}">{{ user.name }}</a>
+        </h2>
+    {% endfor %}
+
+    <img src="{{ asset('image/image_test.png') }}" alt="test">
+
+    {{ app.environment }}
+    
+{% endblock %}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+
+        {# <h1>{{ product.brand }}</h1> #}
+        {# {{ product.model }}
+        <h2>{{ product.price }}</h2>
+        
+            {% if product.price > 50000 %}
+                C'est extrément cher.
+            {% elseif product.price > 20000 %}
+                C'est cher.
+            {% else %}
+                Le prix est acceptable
+            {% endif %}
+            <br> #}
+
+        
+        {% for cle , user in users %}
+            {# {% if user.username == 'Bob' and user.age > 20 %}
+                Hello 
+            <br>
+            {% else %}
+                il n'y a personne dans ce cas 
+                <br>
+            {% endif %} #}
+            <li>{{user . username}}</li>   
+            <br>
+            <li>{{loop.index}} :{{user . username}}</li>         
+            
+        {% endfor %}
+
+        {% for user in users %}
+            {# <li>{% if loop . first %}: {{user . username}}, le champion</li>
+            {% elseif loop . last %}
+            <li>{% if loop . first %}: {{user . username}}, le looser</li>
+            {% else %}
+            <li>{% if loop . first %}: {{user . username}}</li>
+            
+            {% endif %} #}
+            
+        {% endfor %}
+
+        <p>{{ product.description }}</p>
+
+        {{ 42.15 | round(1, 'floor') }}
+
+        {% block body %}{% endblock %}
+    </body>
+</html>
